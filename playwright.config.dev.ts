@@ -26,7 +26,7 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    baseURL: process.env.BASE_URL,
+    baseURL: 'https://www.wikipedia.org',
     httpCredentials: {
       username: process.env.HTTP_CREDENTIALS_USERNAME || 'test',
       // username: process.env.HTTP_CREDENTIALS_USERNAME ? process.env.HTTP_CREDENTIALS_USERNAME : 'undefined',

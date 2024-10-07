@@ -26,9 +26,10 @@ test.describe(('GaragePage with POM'), () => {
         await garagePage.verifyLastAddedCarName('BMW X5');
     })
 
-    test(('Add Audi TT'), async () => {
+    test(('Add Audi TT'), async ({ page }) => {
         await garagePage.addNewCar('Audi', 'TT', '100');
-        await garagePage.verifyLastAddedCarName('Audi TT');
+        await page.pause();
+        await garagePage.verifyLastAddedCarName('Audi TT4');
     })
 
     test(('Add Fiat Ducato'), async () => {

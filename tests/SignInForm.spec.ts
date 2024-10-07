@@ -41,4 +41,34 @@ test.describe(('Sign In form with CodeGen'), () => {
     await signInForm.loginWithCredentials(mainUserEmail, mainUserPassword);
     await garagePage.verifyPageIsOpen();
   });
+
+  test('Multiple Pages', async ({ page, context }) => {
+    const pageInstagramPromise = context.waitForEvent('page');
+
+    await page.locator('.icon-instagram').click();
+    const newPage = await pageInstagramPromise;
+    newPage.locator('');
+    await page.bringToFront();
+
+   // await expect(newPage.getByText('See more from hillel_itschool')).toBeVisible();
+
+    await page.bringToFront();
+    await newPage.bringToFront();
+    await page.pause();
+    await page.bringToFront();
+    await page.pause();
+
+    await newPage.bringToFront();
+
+    await page.bringToFront();
+    await newPage.bringToFront();
+    await page.bringToFront();
+    await newPage.bringToFront();
+    await page.bringToFront();
+    await newPage.bringToFront();
+    await page.bringToFront();
+    await newPage.bringToFront();
+
+
+  });
 })

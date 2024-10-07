@@ -34,6 +34,7 @@ export class GaragePage {
         await this.addNewCarButton.click();
         await this.brandDropdown.selectOption(brand);
         await this.modelDropdown.selectOption(model);
+        const color = await this.addButton.getAttribute('class')
         await this.mileageField.fill(mileage);
         await this.addButton.click();
     }
