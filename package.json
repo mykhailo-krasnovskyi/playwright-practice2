@@ -9,7 +9,10 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.47.1",
-    "@types/node": "^22.5.5"
+    "@testomatio/reporter": "^1.5.3",
+    "@types/node": "^22.5.5",
+    "allure-playwright": "^3.0.4",
+    "playwright-html": "1.2.5"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

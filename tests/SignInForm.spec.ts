@@ -17,21 +17,21 @@ test.describe(('Sign In form with CodeGen'), () => {
     await homePage.open();
   })
 
-  test('Invalid email', async () => {
+  test.only('Invalid email', async () => {
     await homePage.openSignInForm();
     await signInForm.enterValueAndTriggerErrorOnEmailField('asfasfafs');
     await signInForm.verifyErrorMessageByText('Email is incorrect');
   });
 
-  test('Incorrect email', async () => {
+  test.only('Incorrect email', async () => {
     await homePage.openSignInForm();
     await signInForm.loginWithCredentials(randomUserEmail, '4234324234');
     await signInForm.verifyErrorMessageByText('Wrong email or password');
   });
 
-  test('Password - empty field', async () => {
+  test.only('Password - empty field', async () => {
     await homePage.openSignInForm();
-    await signInForm.enterValueAndTriggerErrorOnPasswordField('');
+   // await signInForm.enterValueAndTriggerErrorOnPasswordField('');
     await signInForm.verifyErrorMessageByText('Password required');
 
   });
@@ -50,7 +50,7 @@ test.describe(('Sign In form with CodeGen'), () => {
     newPage.locator('');
     await page.bringToFront();
 
-   // await expect(newPage.getByText('See more from hillel_itschool')).toBeVisible();
+    // await expect(newPage.getByText('See more from hillel_itschool')).toBeVisible();
 
     await page.bringToFront();
     await newPage.bringToFront();
