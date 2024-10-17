@@ -12,6 +12,10 @@ type MyFixtures = {
 
 export const test = base.extend<MyFixtures>({
     garagePageWithRemoving: async ({ page }, use) => {
+        // const context = await browser.newContext({
+        //     storageState: 'test-data/states/mainUserState.json'
+        // })
+        // const page = await context.newPage();
         let garagePage = new GaragePage(page);
         await garagePage.open();
         await use(garagePage);

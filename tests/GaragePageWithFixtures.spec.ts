@@ -15,7 +15,9 @@ test.describe(('GaragePage with POM'), () => {
         signInForm = new SignInForm(page);
     })
 
-    test(('Add BMW X5'), async ({ garagePageWithRemoving, pageSmall }) => {
+    test(('Add BMW X5'), async ({ garagePageWithRemoving, pageSmall, page }) => {
+        page.on('request', request => console.log('>>', request.method(), request.url()));
+        page.on('response', response => console.log('<<', response.status(), response.url()));
         await garagePageWithRemoving.addNewCar('BMW', 'X5', '100');
         await garagePageWithRemoving.verifyLastAddedCarName('BMW X5');
     })
