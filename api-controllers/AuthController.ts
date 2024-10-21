@@ -30,6 +30,29 @@ class AuthController {
 
 
     }
+
+    async deleteUser(sid: string) {
+        return await this.request.delete('/api/users', {
+            headers: {
+                'Cookie': `sid=${sid}`
+            }
+        });
+    }
+
+    async createUser(name: string, lastName: string, email: string, password: string, sid: string) {
+        return await this.request.post('/api/auth/signup', {
+            data: {
+                name,
+                lastName,
+                email,
+                password,
+                repeatPassword: password
+            },
+            headers: {
+                'Cookie': `sid=${sid}`
+            }
+        })
+    }
 }
 
 export default AuthController;

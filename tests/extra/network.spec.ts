@@ -1,11 +1,11 @@
 
 
 import { chromium } from "@playwright/test";
-import { HomePage } from '../page-objects/pages/HomePage';
-import { SignInForm } from '../page-objects/components/forms/SignInForm';
-import { mainUserEmail, mainUserPassword, randomUserEmail } from '../test-data/credentials';
-import { GaragePage } from "../page-objects/pages/GaragePage";
-import { test } from '../test-data/fixtures/fixtureBase'
+import { HomePage } from '../../page-objects/pages/HomePage';
+import { SignInForm } from '../../page-objects/components/forms/SignInForm';
+import { mainUserEmail, mainUserPassword, randomUserEmail } from '../../test-data/credentials';
+import { GaragePage } from "../../page-objects/pages/GaragePage";
+import { test } from '../../test-data/fixtures/fixtureBase'
 
 test.describe(('Network test'), () => {
     let homePage: HomePage;

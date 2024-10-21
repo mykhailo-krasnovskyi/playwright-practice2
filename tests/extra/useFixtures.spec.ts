@@ -1,9 +1,9 @@
 import { chromium, expect } from "@playwright/test";
-import { HomePage } from '../page-objects/pages/HomePage';
-import { SignInForm } from '../page-objects/components/forms/SignInForm';
-import { mainUserEmail, mainUserPassword, randomUserEmail } from '../test-data/credentials';
-import { GaragePage } from "../page-objects/pages/GaragePage";
-import { test } from '../test-data/fixtures/pageSizeBase'
+import { HomePage } from '../../page-objects/pages/HomePage';
+import { SignInForm } from '../../page-objects/components/forms/SignInForm';
+import { mainUserEmail, mainUserPassword, randomUserEmail } from '../../test-data/credentials';
+import { GaragePage } from "../../page-objects/pages/GaragePage";
+import { test } from '../../test-data/fixtures/pageSizeBase'
 
 test.describe(('Fixtures'), () => {
 

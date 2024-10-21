@@ -17,21 +17,21 @@ test.describe(('Sign In form with CodeGen'), () => {
     await homePage.open();
   })
 
-  test.only('Invalid email', async () => {
+  test('Invalid email', async () => {
     await homePage.openSignInForm();
     await signInForm.enterValueAndTriggerErrorOnEmailField('asfasfafs');
     await signInForm.verifyErrorMessageByText('Email is incorrect');
   });
 
-  test.only('Incorrect email', async () => {
+  test('Incorrect email', async () => {
     await homePage.openSignInForm();
     await signInForm.loginWithCredentials(randomUserEmail, '4234324234');
     await signInForm.verifyErrorMessageByText('Wrong email or password');
   });
 
-  test.only('Password - empty field', async () => {
+  test('Password - empty field', async () => {
     await homePage.openSignInForm();
-   // await signInForm.enterValueAndTriggerErrorOnPasswordField('');
+    await signInForm.enterValueAndTriggerErrorOnPasswordField('');
     await signInForm.verifyErrorMessageByText('Password required');
 
   });

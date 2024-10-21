@@ -1,7 +1,7 @@
 import { test, expect, Locator } from '@playwright/test';
-import { mainUserEmail, mainUserPassword } from '../../test-data/credentials';
-import AuthController from '../../api-controllers/AuthController';
-import CarsController from '../../api-controllers/CarsController';
+import { mainUserEmail, mainUserPassword } from '../../../test-data/credentials';
+import AuthController from '../../../api-controllers/AuthController';
+import CarsController from '../../../api-controllers/CarsController';
 
 test.describe('DDT', () => {
 

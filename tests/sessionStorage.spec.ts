@@ -20,7 +20,6 @@ test.describe(('Session storage'), () => {
         page.evaluate(() => {
             console.log('Hello from browser');
         })
-
         console.log('Hello from JS');
     })
 
@@ -66,12 +65,5 @@ test.describe(('Session storage'), () => {
         }
         await page.evaluate((data) => window.sessionStorage.setItem('guestData', JSON.stringify(data)), objWithCars);
         await homePage.open();
-
     })
-
-
-
-
-
-
 })
