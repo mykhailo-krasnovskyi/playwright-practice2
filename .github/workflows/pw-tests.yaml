@@ -1,6 +1,12 @@
 name: tests
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      test_parameters:
+        description : 'Test parameters to run with'
+        required: false
+        default: ' '
+        
 jobs:
   playwright:
     name: 'Playwright Tests'
@@ -15,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run your tests
-        run: npx playwright test SignInForm.spec.ts
+        run: npx playwright test ${{ inputs.test_parameters }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
