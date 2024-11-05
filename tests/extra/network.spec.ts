@@ -34,10 +34,10 @@ test.describe(('Network test'), () => {
             ]
         }
 
-        // await page.route('**/api/cars', route => route.fulfill({
-        //     body: JSON.stringify(testData),
-        // }));
-        await page.route('**/api/cars', route => route.abort());
+        await page.route('**/api/cars', route => route.fulfill({
+            body: JSON.stringify(testData),
+        }));
+        //  await page.route('**/api/cars', route => route.abort());
 
         await homePage.open();
         await homePage.openSignInForm();

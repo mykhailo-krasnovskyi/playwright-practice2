@@ -6,7 +6,7 @@ import { GaragePage } from "../page-objects/pages/GaragePage";
 import { test } from '../test-data/fixtures/fixtureBase'
 
 test.describe(('GaragePage with POM'), () => {
-    test.use({ storageState: 'test-data/states/mainUserState.json' });
+  //  test.use({ storageState: 'test-data/states/mainUserState.json' });
     let homePage: HomePage;
     let signInForm: SignInForm;
 
@@ -35,6 +35,11 @@ test.describe(('GaragePage with POM'), () => {
     test(('Add Ford Fiesta'), async ({ garagePageWithRemoving }) => {
         await garagePageWithRemoving.addNewCar('Ford', 'Fiesta', '100');
         await garagePageWithRemoving.verifyLastAddedCarName('Ford Fiesta');
+    })
+
+    test(('HW27 Add Ford Fiesta'), async ({ userGaragePage }) => {
+        await userGaragePage.addNewCar('Ford', 'Fiesta', '100');
+        await userGaragePage.verifyLastAddedCarName('Ford Fiesta');
     })
 
 })

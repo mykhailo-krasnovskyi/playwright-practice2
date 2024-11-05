@@ -2,6 +2,7 @@ import { test, expect, Locator } from '@playwright/test';
 import { mainUserEmail, mainUserPassword } from '../../../test-data/credentials';
 import AuthController from '../../../api-controllers/AuthController';
 import CarsController from '../../../api-controllers/CarsController';
+import { send } from 'process';
 
 test.describe('DDT', () => {
 
@@ -43,6 +44,31 @@ test.describe('DDT', () => {
 
 
     ]
+
+    const senderAddress = "Test";
+
+    const usersList = [
+        {
+            receiver: 'Test 1',
+        },
+        {
+            receiver: 'Test 2',
+        },
+        {
+            receiver: 'Test 3',
+        },
+    ]
+
+    usersList.forEach((user) => {
+        test(`Send `, async ({ request }) => {
+            const response = await request.post('/api/cars/', {
+                // receiver: user.receiver,
+                // sender: 'Test Address',
+            });
+            console.log(await response.json());
+        })
+    })
+
 
     carsList.forEach((car) => {
         test(`Car with mileage ${car.mileage} added`, async ({ request }) => {
